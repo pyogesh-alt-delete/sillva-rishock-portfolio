@@ -1,0 +1,451 @@
+<div #rootEl class="sr-root" [class.sr-light]="!isDark">
+
+  <!-- ===== LOADER ===== -->
+  <div #loaderEl class="loader">
+    <div class="loader-top">
+      <span class="loader-rec">
+        <span class="loader-dot"></span>Rendering composition
+      </span>
+      <span>SILVA_HERO.aep</span>
+    </div>
+
+    <div class="loader-center">
+      <div class="loader-pct-wrap">
+        <span #loadPctEl class="loader-pct">0</span>
+        <span class="loader-pct-sign">%</span>
+      </div>
+      <div #loadStageEl class="loader-stage">Initializing</div>
+    </div>
+
+    <div class="loader-bottom">
+      <div class="loader-bar-wrap">
+        <div #loadBarEl class="loader-bar-fill"></div>
+        <div class="loader-scan"></div>
+      </div>
+      <div class="loader-meta">
+        <span>Frame <span #loadFrameEl>000</span> / 240</span>
+        <span>30 FPS · 1920×1080</span>
+        <span #loadTcEl>00:00:00:00</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grid bg -->
+  <div class="grid-bg"></div>
+  <!-- Spotlight -->
+  <div #spotEl class="spotlight"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav">
+    <div class="nav-left">
+      <div class="logo">SILVA<span class="logo-r">®</span></div>
+      <div class="avail-pill">
+        <span class="avail-dot"></span>Available for work — 2026
+      </div>
+    </div>
+    <div class="nav-links">
+      <a data-magnetic href="#about" (mouseenter)="onLinkEnter($event)" (mouseleave)="onLinkLeave($event)">About</a>
+      <a data-magnetic href="#work" (mouseenter)="onLinkEnter($event)" (mouseleave)="onLinkLeave($event)">Work</a>
+      <a data-magnetic href="#designs" (mouseenter)="onLinkEnter($event)" (mouseleave)="onLinkLeave($event)">Designs</a>
+      <a data-magnetic href="#experience" (mouseenter)="onLinkEnter($event)" (mouseleave)="onLinkLeave($event)">Experience</a>
+      <a data-magnetic href="#contact" (mouseenter)="onLinkEnter($event)" (mouseleave)="onLinkLeave($event)">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" (click)="toggleTheme()" aria-label="Toggle theme">
+        <span class="theme-icon-sun">☀</span>
+        <span class="theme-icon-moon">☾</span>
+        <span #knobEl class="theme-knob"></span>
+      </button>
+      <a data-magnetic href="#contact" class="btn-talk">Let's talk →</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <main class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="accent">✱</span> Portfolio — Vol.01
+        <span class="eyebrow-line"></span>
+        Graphic · Motion
+      </div>
+
+      <h1 #nameEl class="hero-name">
+        <div class="hero-name-row">
+          <span data-letter-in class="letter" style="animation:letterIn .9s cubic-bezier(.16,1,.3,1) both .05s">S</span><span data-letter-in class="letter" style="animation:letterIn .9s cubic-bezier(.16,1,.3,1) both .10s">I</span><span data-letter-in class="letter" style="animation:letterIn .9s cubic-bezier(.16,1,.3,1) both .15s">L</span><span data-letter-in class="letter" style="animation:letterIn .9s cubic-bezier(.16,1,.3,1) both .20s">V</span><span data-letter-in class="letter" style="animation:letterIn .9s cubic-bezier(.16,1,.3,1) both .25s">A</span>
+        </div>
+        <div class="hero-name-row accent-color">
+          <span data-letter-in class="letter" style="animation:letterIn .9s cubic-bezier(.16,1,.3,1) both .32s">R</span><span data-letter-in class="letter" style="animation:letterIn .9s cubic-bezier(.16,1,.3,1) both .37s">I</span><span data-letter-in class="letter" style="animation:letterIn .9s cubic-bezier(.16,1,.3,1) both .42s">S</span><span data-letter-in class="letter" style="animation:letterIn .9s cubic-bezier(.16,1,.3,1) both .47s">H</span><span data-letter-in class="letter" style="animation:letterIn .9s cubic-bezier(.16,1,.3,1) both .52s">O</span><span data-letter-in class="letter" style="animation:letterIn .9s cubic-bezier(.16,1,.3,1) both .57s">C</span><span data-letter-in class="letter" style="animation:letterIn .9s cubic-bezier(.16,1,.3,1) both .62s">K</span>
+        </div>
+      </h1>
+
+      <p data-letter-in class="hero-bio" style="animation:riseUp .8s cubic-bezier(.16,1,.3,1) both .8s">
+        A creative professional crafting captivating visuals that tell your story — from eye-catching illustrations and dynamic event posters to web banners, social posts, and <strong>motion graphics</strong>.
+      </p>
+
+      <div data-letter-in class="hero-ctas" style="animation:riseUp .8s cubic-bezier(.16,1,.3,1) both .95s">
+        <a data-magnetic href="#designs" class="btn-primary">View Work →</a>
+        <button data-magnetic class="btn-ghost">
+          <span class="btn-play-icon">
+            <svg width="10" height="11" viewBox="0 0 10 11" fill="#fff"><path d="M0 0l10 5.5L0 11z"/></svg>
+          </span>Watch Showreel
+        </button>
+      </div>
+    </div>
+
+    <div data-letter-in class="hero-right" style="animation:riseUp 1s cubic-bezier(.16,1,.3,1) both .5s">
+      <div class="portrait-frame">
+        <div class="portrait-rec">
+          <span class="rec-dot"></span>REC · PORTRAIT
+          <span class="portrait-res">1080×1350</span>
+        </div>
+        <div class="portrait-border"></div>
+        <div class="portrait-corner portrait-corner--tl"></div>
+        <div class="portrait-corner portrait-corner--tr"></div>
+        <div class="portrait-corner portrait-corner--bl"></div>
+        <div class="portrait-corner portrait-corner--br"></div>
+        <div class="portrait-placeholder">
+          <span class="portrait-plus">+</span>
+          <span class="portrait-placeholder-txt">Drop Silva's portrait</span>
+        </div>
+        <div class="portrait-bottom">
+          <span>LAYER 01</span>
+          <span class="portrait-meta">⌘ 4K · 30FPS</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== MARQUEE ===== -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Graphic Designer</span><span class="marquee-sep">✱</span>
+      <span>Video Editor</span><span class="marquee-sep">✱</span>
+      <span>Motion Graphics Designer</span><span class="marquee-sep">✱</span>
+      <span>Social Media Designer</span><span class="marquee-sep">✱</span>
+      <span>Graphic Designer</span><span class="marquee-sep">✱</span>
+      <span>Video Editor</span><span class="marquee-sep">✱</span>
+      <span>Motion Graphics Designer</span><span class="marquee-sep">✱</span>
+      <span>Social Media Designer</span><span class="marquee-sep">✱</span>
+    </div>
+  </div>
+
+  <!-- ===== TIMELINE SCRUBBER ===== -->
+  <div class="timeline">
+    <div class="tl-controls">
+      <div class="tl-left">
+        <button class="tl-play" (click)="togglePlay()" aria-label="Play/Pause">
+          @if (isPlaying) {
+            <svg width="11" height="12" viewBox="0 0 11 12" fill="currentColor"><rect x="0" width="3.5" height="12" rx="1"/><rect x="7.5" width="3.5" height="12" rx="1"/></svg>
+          } @else {
+            <svg width="11" height="12" viewBox="0 0 11 12" fill="currentColor"><path d="M0 0l11 6L0 12z"/></svg>
+          }
+        </button>
+        <span #tcEl class="tl-tc">00:00:00:00</span>
+        <span class="tl-dur">/ 00:00:08:00</span>
+      </div>
+      <div class="tl-right">
+        <span>COMP: SILVA_HERO.aep</span>
+        <span class="tl-fps">30 FPS</span>
+      </div>
+    </div>
+
+    <div class="tl-body">
+      <div class="tl-labels">
+        <div class="tl-tick-spacer"></div>
+        <div class="tl-label"><span class="tl-swatch" style="background:var(--accent)"></span>Name</div>
+        <div class="tl-label"><span class="tl-swatch" style="background:#3ad8c0"></span>Roles</div>
+        <div class="tl-label"><span class="tl-swatch" style="background:#9b7bff"></span>Portrait</div>
+        <div class="tl-label"><span class="tl-swatch" style="background:#ffd23d"></span>FX Glow</div>
+      </div>
+      <div class="tl-tracks-wrap">
+        <div class="tl-ruler"></div>
+        <div class="tl-tracks">
+          <div class="tl-track">
+            <div class="tl-bar" style="left:3%;right:3%;background:var(--accent)">
+              <span class="tl-kf" style="left:24%"></span>
+              <span class="tl-kf" style="left:62%"></span>
+            </div>
+          </div>
+          <div class="tl-track">
+            <div class="tl-bar" style="left:8%;right:24%;background:#3ad8c0">
+              <span class="tl-kf" style="left:0%"></span>
+              <span class="tl-kf" style="left:68%"></span>
+            </div>
+          </div>
+          <div class="tl-track">
+            <div class="tl-bar" style="left:14%;right:6%;background:#9b7bff">
+              <span class="tl-kf" style="left:0%"></span>
+            </div>
+          </div>
+          <div class="tl-track">
+            <div class="tl-bar" style="left:30%;right:30%;background:#ffd23d">
+              <span class="tl-kf" style="left:0%"></span>
+              <span class="tl-kf" style="left:100%"></span>
+            </div>
+          </div>
+        </div>
+        <div #headEl class="tl-head">
+          <div class="tl-head-arrow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== REELS SECTION ===== -->
+  <section id="work" class="section-reels">
+    <div class="reels-inner">
+      <div class="reels-left">
+        <div class="section-eyebrow">
+          <span class="accent">✱</span> Selected Reels
+          <span class="eyebrow-line"></span>
+          &#64;silva.rishock
+        </div>
+        <h2 class="section-heading">Reels that<br><span class="accent">move.</span></h2>
+        <p class="section-sub">Motion, posters, campaigns — the work, the way it's meant to be seen. Scroll the feed, double-tap what you love.</p>
+
+        <div class="reels-counter">
+          <div class="reel-nums">
+            <span class="reel-big">{{ activeLabel }}</span>
+            <span class="reel-of">/ {{ reelTotal }}</span>
+          </div>
+          <a data-magnetic href="#" class="btn-follow">+ Follow</a>
+        </div>
+        <div class="reel-hint">
+          <span class="pulse-arrows">↑↓</span> Scroll inside the phone
+        </div>
+      </div>
+
+      <div class="reels-right">
+        <div class="reel-dots">
+          @for (reel of reelData; track reel.id; let i = $index) {
+            <span class="reel-dot"
+              [style.height]="i === activeReel ? '22px' : '8px'"
+              [style.background]="i === activeReel ? 'var(--accent)' : 'var(--muted)'"></span>
+          }
+        </div>
+
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div #scrollerEl class="phone-screen sr-scroll">
+            @for (reel of reelData; track reel.id; let i = $index) {
+              <div class="reel-slide" (click)="doubleTap(i, $event)">
+                <video class="reel-video" [src]="reel.cover" autoplay muted loop playsinline></video>
+                <div class="reel-grad-top"></div>
+                <div class="reel-grad-bot"></div>
+
+                <div class="reel-header">
+                  <span>Reels</span>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M3 7h3l1.5-2h9L18 7h3v12H3z"/><circle cx="12" cy="13" r="3.4"/></svg>
+                </div>
+
+                <div class="reel-actions">
+                  <div class="reel-avatar-wrap">
+                    <div class="reel-avatar">SR</div>
+                    <div class="reel-follow-plus">+</div>
+                  </div>
+                  <button class="reel-like-btn" (click)="$event.stopPropagation(); toggleLike(i)">
+                    <svg width="29" height="29" viewBox="0 0 24 24"
+                      [attr.fill]="liked[i] ? '#ff3040' : 'none'"
+                      [attr.stroke]="liked[i] ? '#ff3040' : '#ffffff'"
+                      stroke-width="2" stroke-linejoin="round">
+                      <path d="M12 21C12 21 3.5 15.5 3.5 9.3 3.5 6.4 5.8 4.5 8.2 4.5c1.7 0 3 .9 3.8 2.2C12.8 5.4 14.1 4.5 15.8 4.5c2.4 0 4.7 1.9 4.7 4.8C20.5 15.5 12 21 12 21z"/>
+                    </svg>
+                    {{ fmtLikes(reel.baseLikes, liked[i]) }}
+                  </button>
+                  <div class="reel-action">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-11.9 7.6L3 21l1.9-5.6A8.4 8.4 0 1 1 21 11.5z"/></svg>
+                    {{ reel.comments }}
+                  </div>
+                  <div class="reel-action">
+                    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></svg>
+                  </div>
+                  <div class="reel-action">
+                    <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><path d="M5 3h14v18l-7-5-7 5z"/></svg>
+                  </div>
+                  <div class="reel-disc">♫</div>
+                </div>
+
+                <div class="reel-caption">
+                  <div class="reel-user">silva.rishock <span class="reel-follow-tag">Follow</span></div>
+                  <p class="reel-text">{{ reel.caption }}</p>
+                  <div class="reel-music-line"><span class="reel-disc-sm">♫</span> {{ reel.music }} — silva.rishock</div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DESIGNS SECTION ===== -->
+  <section id="designs" class="section-designs">
+    <div class="designs-inner">
+      <div data-reveal class="designs-header">
+        <div>
+          <div class="section-eyebrow">
+            <span class="accent">✱</span> Selected Designs
+            <span class="eyebrow-line"></span>
+            {{ galleryCount }} works
+          </div>
+          <h2 class="section-heading">The <span class="accent">Work.</span></h2>
+        </div>
+        <div class="gallery-chips">
+          @for (chip of galleryChips; track chip) {
+            <button class="chip" [class.chip--active]="galleryFilter === chip" (click)="setFilter(chip)">{{ chip }}</button>
+          }
+        </div>
+      </div>
+
+      <div data-reveal class="featured-wrap">
+        <div class="featured-label">
+          <span><span class="accent">◆</span> Featured — Cooke: Legacy Lives On</span>
+          <span>Drag to scroll →</span>
+        </div>
+        <div class="featured-scroll sr-scroll">
+          <img src="uploads/cooke carousal 8.png" alt="Cooke Legacy Lives On" class="featured-img" />
+        </div>
+      </div>
+
+      <div data-reveal class="gallery-masonry">
+        @for (item of filteredGallery; track item.src) {
+          <a [href]="item.src" target="_blank" rel="noreferrer" class="gallery-card">
+            <img [src]="item.src" [alt]="item.title" loading="lazy" class="gallery-img" />
+            <div class="gallery-overlay">
+              <div>
+                <div class="gallery-cat">{{ item.cat }}</div>
+                <div class="gallery-title">{{ item.title }}</div>
+              </div>
+              <span class="gallery-arrow">↗</span>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOOLS SECTION ===== -->
+  <section id="tools" class="section-tools">
+    <div class="tools-inner">
+      <div data-reveal class="tools-header">
+        <div class="section-eyebrow center">
+          <span class="accent">✱</span> The Toolkit <span class="accent">✱</span>
+        </div>
+        <h2 class="section-heading center">Tools I <span class="accent">command.</span></h2>
+      </div>
+      <div class="tools-grid">
+        @for (tool of tools; track tool.name) {
+          <div data-reveal [attr.data-delay]="tool.delay" class="tool-item">
+            <div class="tool-icon" [style.border-color]="tool.color" [style.background]="tool.bg" [style.animation-delay]="tool.delay">
+              <span class="tool-abbr" [style.color]="tool.color">{{ tool.abbr }}</span>
+            </div>
+            <div class="tool-name">{{ tool.name }}</div>
+            <div class="tool-sub">{{ tool.sub }}</div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE SECTION ===== -->
+  <section id="experience" class="section-exp">
+    <div class="exp-inner">
+      <div data-reveal class="exp-header">
+        <div class="section-eyebrow">
+          <span class="accent">✱</span> Career Timeline
+          <span class="eyebrow-line"></span>
+        </div>
+        <h2 class="section-heading">Experience <span class="accent">&amp; path.</span></h2>
+      </div>
+      <div class="exp-list">
+        <div class="exp-line"></div>
+        @for (job of experience; track job.company) {
+          <div data-reveal class="exp-item">
+            <span class="exp-node"><span class="exp-node-dot"></span></span>
+            <div class="exp-content">
+              <div class="exp-meta">
+                <span class="exp-period">{{ job.period }}</span>
+                @if (job.current) {
+                  <span class="current-badge">Current</span>
+                }
+              </div>
+              <h3 class="exp-role">{{ job.role }}</h3>
+              <div class="exp-company">{{ job.company }}</div>
+              <p class="exp-desc">{{ job.desc }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MUSIC SECTION ===== -->
+  <section id="music" class="section-music">
+    <div class="music-inner">
+      <div data-reveal class="music-header">
+        <div>
+          <div class="section-eyebrow">
+            <span style="color:#1db954">♪</span> Off The Clock
+            <span class="eyebrow-line"></span>
+          </div>
+          <h2 class="section-heading">The <span class="accent">sound.</span></h2>
+          <p class="section-sub">When the timeline stops scrubbing, it starts playing. Original tracks from the <strong>Unfinished Melodies</strong> project.</p>
+        </div>
+        <a href="https://open.spotify.com" target="_blank" rel="noreferrer" data-magnetic class="btn-spotify">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.5 17.3c-.22.36-.68.47-1.03.25-2.82-1.72-6.36-2.11-10.54-1.16-.4.1-.8-.16-.9-.57-.1-.4.16-.8.57-.9 4.56-1.04 8.48-.59 11.64 1.34.36.22.47.68.26 1.04zm1.47-3.27c-.27.44-.85.58-1.3.31-3.23-1.98-8.15-2.56-11.97-1.4-.5.15-1.03-.13-1.18-.63-.15-.5.13-1.03.63-1.18 4.36-1.32 9.78-.68 13.5 1.6.44.27.58.85.32 1.3zm.13-3.4C15.36 8.3 8.7 8.08 4.85 9.25c-.6.18-1.23-.16-1.4-.76-.18-.6.16-1.23.76-1.4 4.42-1.34 11.77-1.08 16.4 1.66.54.32.72 1.02.4 1.56-.32.54-1.02.72-1.56.4z"/></svg>
+          Play on Spotify
+        </a>
+      </div>
+      <div data-reveal class="track-list">
+        @for (track of tracks; track track.title; let i = $index) {
+          <div class="track-row" [class.track-row--active]="nowPlaying === i" (click)="toggleTrack(i)">
+            <button class="track-btn" (click)="$event.stopPropagation(); toggleTrack(i)">
+              @if (nowPlaying === i) {
+                <span class="equalizer">
+                  <span class="eq-bar" style="animation:eq .9s ease-in-out infinite"></span>
+                  <span class="eq-bar" style="animation:eq .9s ease-in-out infinite .3s"></span>
+                  <span class="eq-bar" style="animation:eq .9s ease-in-out infinite .15s"></span>
+                </span>
+              } @else {
+                <svg width="14" height="15" viewBox="0 0 14 15" fill="#fff"><path d="M0 0l14 7.5L0 15z"/></svg>
+              }
+            </button>
+            <div class="track-info">
+              <div class="track-title">{{ track.title }}</div>
+              <div class="track-sub">Silva Rishock · {{ track.album }}</div>
+            </div>
+            <span class="track-dur">{{ track.dur }}</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linejoin="round"><path d="M5 3h14v18l-7-5-7 5z"/></svg>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="section-contact">
+    <div class="contact-inner">
+      <div data-reveal class="contact-cta">
+        <div class="avail-inline">
+          <span class="avail-dot"></span>Available for work — 2026
+        </div>
+        <h2 class="contact-heading">Let's create<br>something <span class="accent">loud.</span></h2>
+        <div class="contact-btns">
+          <a data-magnetic href="mailto:hello@silvarishock.com" class="btn-email">hello&#64;silvarishock.com</a>
+          <a data-magnetic href="#" class="btn-cv">Download CV ↓</a>
+        </div>
+      </div>
+      <footer class="footer">
+        <span>© 2026 Silva Rishock</span>
+        <div class="footer-links">
+          <a data-magnetic href="#">Instagram</a>
+          <a data-magnetic href="#">Behance</a>
+          <a data-magnetic href="#">LinkedIn</a>
+          <a data-magnetic href="#">YouTube</a>
+        </div>
+        <span>Chennai, India · IST</span>
+      </footer>
+    </div>
+  </section>
+
+</div>

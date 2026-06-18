@@ -1,0 +1,128 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+:root {
+  --bg: #0a0a0b;
+  --bg2: #101013;
+  --panel: #141417;
+  --panelHi: #1c1c21;
+  --text: #f4f3ef;
+  --muted: #8a8a91;
+  --line: rgba(255, 255, 255, 0.10);
+  --grid: rgba(255, 255, 255, 0.035);
+  --accent: #ff5b2e;
+}
+
+body.light-mode {
+  --bg: #eceae3;
+  --bg2: #ffffff;
+  --panel: #ffffff;
+  --panelHi: #f3f1ea;
+  --text: #15140f;
+  --muted: #6c6b63;
+  --line: rgba(0, 0, 0, 0.12);
+  --grid: rgba(0, 0, 0, 0.04);
+}
+
+/* scrollbar hidden */
+.sr-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+.sr-scroll {
+  scrollbar-width: none;
+}
+
+/* animations */
+@keyframes letterIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.55em) rotate(7deg);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+@keyframes glitch {
+  0%, 90%, 100% { text-shadow: none; transform: translate(0); }
+  91% { text-shadow: -3px 0 #ff2e2e, 3px 0 #2ee9ff; transform: translate(2px, -1px); }
+  94% { text-shadow: 3px 0 #ff2e2e, -3px 0 #2ee9ff; transform: translate(-2px, 1px); }
+  97% { text-shadow: -2px 0 #ff2e2e, 2px 0 #2ee9ff; transform: translate(1px, 0); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.55); opacity: 0.5; }
+}
+
+@keyframes riseUp {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes recBlink {
+  50% { opacity: 0.2; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+@keyframes eq {
+  0%, 100% { transform: scaleY(0.25); }
+  50% { transform: scaleY(1); }
+}
+
+@keyframes heartPop {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.2) rotate(-14deg); }
+  18% { opacity: 1; transform: translate(-50%, -50%) scale(1.15) rotate(6deg); }
+  34% { transform: translate(-50%, -50%) scale(0.92) rotate(-3deg); }
+  100% { opacity: 0; transform: translate(-50%, -150%) scale(1.05) rotate(0); }
+}
+
+@keyframes discSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes loadScan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes loadBlink {
+  50% { opacity: 0.25; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+a {
+  color: inherit;
+}
