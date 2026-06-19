@@ -1,31 +1,45 @@
 <div #rootEl class="sr-root" [class.sr-light]="!isDark">
 
-  <!-- ===== LOADER ===== -->
+  <!-- ===== LOADER (QR SCANNER) ===== -->
   <div #loaderEl class="loader">
-    <div class="loader-top">
-      <span class="loader-rec">
-        <span class="loader-dot"></span>Rendering composition
+    <div class="loader-hud" data-hud>
+      <span class="loader-hud-left">
+        <span class="loader-dot"></span>Scanning portfolio
       </span>
-      <span>SILVA_HERO.aep</span>
+      <span>silva.rishock /qr</span>
     </div>
 
     <div class="loader-center">
-      <div class="loader-pct-wrap">
-        <span #loadPctEl class="loader-pct">0</span>
-        <span class="loader-pct-sign">%</span>
+      <div #loadQrEl class="qr-wrap">
+        <span class="qr-corner qr-corner--tl"></span>
+        <span class="qr-corner qr-corner--tr"></span>
+        <span class="qr-corner qr-corner--bl"></span>
+        <span class="qr-corner qr-corner--br"></span>
+        @for (cell of qrCells; track cell.left + cell.top) {
+          <span
+            class="qr-cell"
+            data-qr
+            [attr.data-row]="cell.row"
+            [style.left]="cell.left"
+            [style.top]="cell.top"
+            [style.width]="cell.size"
+            [style.height]="cell.size"
+          ></span>
+        }
+        <div #loadScanEl class="qr-scan-line"></div>
       </div>
-      <div #loadStageEl class="loader-stage">Initializing</div>
+      <div #loadStageEl class="loader-stage">Locating code</div>
     </div>
 
-    <div class="loader-bottom">
+    <div class="loader-bottom" data-hud>
       <div class="loader-bar-wrap">
         <div #loadBarEl class="loader-bar-fill"></div>
         <div class="loader-scan"></div>
       </div>
       <div class="loader-meta">
-        <span>Frame <span #loadFrameEl>000</span> / 240</span>
-        <span>30 FPS · 1920×1080</span>
-        <span #loadTcEl>00:00:00:00</span>
+        <span>Modules <span #loadFrameEl>000</span> / {{ qrTotal }}</span>
+        <span>ECC · LEVEL H</span>
+        <span #loadTcEl>DECODING…</span>
       </div>
     </div>
   </div>

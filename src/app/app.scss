@@ -31,7 +31,7 @@
   transition: opacity 0.7s ease, visibility 0.7s ease;
 }
 
-.loader-top {
+.loader-hud {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,9 +39,10 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #8a8a91;
+  transition: opacity 0.4s ease;
 }
 
-.loader-rec {
+.loader-hud-left {
   display: flex;
   align-items: center;
   gap: 9px;
@@ -60,29 +61,46 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 26px;
+  gap: 28px;
 }
 
-.loader-pct-wrap {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
+/* QR Scanner */
+.qr-wrap {
+  position: relative;
+  width: min(58vw, 300px);
+  aspect-ratio: 1;
 }
 
-.loader-pct {
-  font-size: clamp(5rem, 18vw, 14rem);
-  font-weight: 700;
-  line-height: 0.8;
-  letter-spacing: -0.04em;
-  color: #f4f3ef;
-  font-family: 'Space Grotesk', sans-serif;
+.qr-corner {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 3px solid #ff5b2e;
+
+  &.qr-corner--tl { left: -12px; top: -12px; border-right: none; border-bottom: none; }
+  &.qr-corner--tr { right: -12px; top: -12px; border-left: none; border-bottom: none; }
+  &.qr-corner--bl { left: -12px; bottom: -12px; border-right: none; border-top: none; }
+  &.qr-corner--br { right: -12px; bottom: -12px; border-left: none; border-top: none; }
 }
 
-.loader-pct-sign {
-  font-size: clamp(1.6rem, 4vw, 3rem);
-  font-weight: 700;
-  color: #ff5b2e;
-  font-family: 'Space Grotesk', sans-serif;
+.qr-cell {
+  position: absolute;
+  background: #f4f3ef;
+  border-radius: 1px;
+  opacity: 0.08;
+  transition: opacity 0.28s ease;
+  will-change: transform, opacity;
+}
+
+.qr-scan-line {
+  position: absolute;
+  left: -3%;
+  right: -3%;
+  top: 0;
+  height: 3px;
+  background: #ff5b2e;
+  box-shadow: 0 0 22px 5px rgba(255,91,46,0.85);
+  border-radius: 3px;
 }
 
 .loader-stage {
